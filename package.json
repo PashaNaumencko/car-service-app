@@ -1,0 +1,32 @@
+{
+  "name": "car-service-app",
+  "private": "true",
+  "engines": {
+    "node": "18.x.x",
+    "npm": "9.x.x"
+  },
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend"
+  ],
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm run build:shared",
+    "build:shared": "npm run build -w shared",
+    "build:frontend": "npm run build -w frontend",
+    "build:backend": "npm run build -w backend",
+    "lint:editor": "editorconfig-checker",
+    "lint:fs": "ls-lint",
+    "lint:type": "npm run lint:type --workspaces --if-present",
+    "lint:js": "npm run lint:js --workspaces --if-present -- --max-warnings=0",
+    "lint:css": "npm run lint:css --workspaces --if-present",
+    "lint:prettify": "prettier --check \"**/*.{ts,tsx,json,md,scss,html,yml}\"",
+    "lint": "npm run lint:editor && npm run lint:fs && npm run lint:prettify && npm run lint:type && npm run lint:js && npm run lint:css",
+    "prettify": "prettier --write \"**/*.{ts,tsx,json,md,scss,html,yml}\"",
+    "clear:backend": "cd backend && rm -rf node_modules",
+    "clear:frontend": "cd frontend && rm -rf node_modules",
+    "clear:root": "rm -rf node_modules",
+    "reinstall": "npm run clear:backend && npm run clear:frontend && npm run clear:root && npm install"
+  }
+}
