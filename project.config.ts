@@ -1,6 +1,6 @@
 const ProjectPrefix = {
-    APP: 'ss',
-    ENVIRONMENTS: ['development', 'production'],
+  APP: 'car-service',
+  ENVIRONMENTS: ['development', 'production'],
 } as const;
 
 export { ProjectPrefix };

@@ -10,9 +10,14 @@
     "lint:type": "npx tsc --noEmit",
     "lint:js": "npx eslint \"src/**/*.ts\"",
     "lint": "npm run lint:type && npm run lint:js",
-    "build": "tsc && tsc-alias"
+    "build": "npx tsc && npx tsc-alias"
   },
   "dependencies": {
     "joi": "^17.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.0",
+    "tsc-alias": "^1.8.6",
+    "typescript": "5.0.4"
   }
 }

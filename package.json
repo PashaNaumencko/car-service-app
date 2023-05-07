@@ -48,7 +48,6 @@
     "typescript": "5.0.4"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "commit-msg": "npx commitlint --edit $1"
-}
+    "pre-commit": "npx lint-staged"
+  }
 }
